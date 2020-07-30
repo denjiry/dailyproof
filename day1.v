@@ -17,4 +17,5 @@ Theorem t1:
   (exists x,(_ドラえもん(x) /\ exists z22,(_ネズミ(z22) /\ exists e,(_好き(e) /\ (Nom(e) = x) /\ (Nom(e) = z22))))).
 Proof.
   intros H1 H2.
-  
+  eexists ?[x].
+  split.
