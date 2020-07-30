@@ -17,6 +17,9 @@ Theorem t1:
   (exists x,(_ドラえもん(x) /\ exists z22,(_ネズミ(z22) /\ exists e,(_好き(e) /\ (Nom(e) = x) /\ (Acc(e) = z22))))).
 Proof.
   intros H1 H2.
-  eexists ?[x].
-  split.
+  destruct H1.
+  destruct H.
+  destruct H0 as [z4 [d eq]].
+  exists z4.  split.  assumption. 
+  exists x. split. assumption.
   
