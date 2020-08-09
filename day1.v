@@ -12,7 +12,7 @@ Parameter _好き : Event -> Prop.
 Theorem t1:
   (exists x,(_ネズミ(x) /\ exists z4,(_ドラえもん(z4) /\ exists e,(_嫌い(e) /\ (Acc(e) = x) /\ (Nom(e) = z4)))))
   ->
-  (forall x z, exists e,(_嫌い(e) /\ (Acc(e) = z) /\ (Nom(e) = x)) -> exists e,(_好き(e) /\ (Acc(e) = z) /\ (Nom(e) = x)))
+  (forall x z, exists e,(_嫌い(e) /\ (Acc(e) = z) /\ (Nom(e) = x)) -> (exists e,(_好き(e) /\ (Acc(e) = z) /\ (Nom(e) = x))))
   ->
   (exists x,(_ドラえもん(x) /\ exists z22,(_ネズミ(z22) /\ exists e,(_好き(e)  /\ (Acc(e) = z22) /\ (Nom(e) = x))))).
 Proof.
@@ -23,4 +23,7 @@ Proof.
   exists z4.  split. assumption. 
   exists x. split. assumption.
   specialize H2 with (z:=x) (x:=z4).
-  
+  destruct H2.
+  apply H0.
+  destruct eq.
+  assumption.
