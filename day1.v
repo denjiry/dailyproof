@@ -22,4 +22,5 @@ Proof.
   destruct H0 as [z4 [d eq]].
   exists z4.  split. assumption. 
   exists x. split. assumption.
+  specialize H2 with (z:=x) (x:=z4).
   
