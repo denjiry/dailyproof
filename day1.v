@@ -14,7 +14,7 @@ Theorem t1:
   ->
   (forall x z, exists e,(_嫌い(e) /\ (Acc(e) = z) /\ (Nom(e) = x)) -> exists e,(_好き(e) /\ (Acc(e) = z) /\ (Nom(e) = x)))
   ->
-  (exists x,(_ドラえもん(x) /\ exists z22,(_ネズミ(z22) /\ exists e,(_好き(e) /\ (Nom(e) = x) /\ (Acc(e) = z22))))).
+  (exists x,(_ドラえもん(x) /\ exists z22,(_ネズミ(z22) /\ exists e,(_好き(e)  /\ (Acc(e) = z22) /\ (Nom(e) = x))))).
 Proof.
   intros H1 H2.
   destruct H1.
