@@ -10,11 +10,17 @@ Parameter _嫌い : Event -> Prop.
 Parameter _好き : Event -> Prop.
 
 Theorem shadowing_equality_e0_e1 :
-  forall p0 p1:Event->Prop,(exists e0,(p0 e0->(exists e1, p1 e1)))
-                    <->
-                    ((exists e0,p0 e0)->(exists e1, p1 e1)).
+  forall p0 p1:Event->Prop,((exists e0,p0 e0)->(exists e1, p1 e1))
+                    ->
+                    (exists e0,(p0 e0->(exists e1, p1 e1))).
 Proof.
-  Admitted.
+  intros p0 p1 UnShadow.
+  eexists.
+  intro hyp.
+  apply UnShadow.
+  eexists.
+  eapply hyp.
+Qed.
 
 Theorem t1:
   (exists x,(_ネズミ(x) /\ exists z4,(_ドラえもん(z4) /\ exists e,(_嫌い(e) /\ (Acc(e) = x) /\ (Nom(e) = z4)))))
