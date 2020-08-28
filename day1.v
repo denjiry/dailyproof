@@ -26,3 +26,4 @@ Proof.
   destruct H2.
   apply eq.
   exists x0. assumption.
+Qed.
